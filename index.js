@@ -26,7 +26,7 @@ app.get('/callback', async (req, res) => {
       },
     );
 
-    fs.writeFile('token-response.json', response.data, function(err) {
+    fs.writeFile('./data/token-response.json', response.data, function(err) {
         if (err) {
             console.log(err);
         }
