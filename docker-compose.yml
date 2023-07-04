@@ -9,7 +9,7 @@ services:
             SELF_URI: ${SELF_URI}
             CODE_CHALLENGE_STR: ${CODE_CHALLENGE_STR}
             TWITTER_CLIENT_ID: ${TWITTER_CLIENT_ID}
-            TWITTER_CLIENT_SECRET: ${TWITTER_CLIENT_SECRET}
+            TWITTER_CONSUMER_SECRET: ${TWITTER_CONSUMER_SECRET}
         ports:
             - ${BIND_INTERFACE}:${BIND_INTERFACE_PORT}:${API_PORT}
         volumes:
