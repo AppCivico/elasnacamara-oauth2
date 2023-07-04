@@ -11,7 +11,7 @@ app.get('/callback', async (req, res) => {
 
   try {
     const response = await axios.post(
-      'https://api.twitter.com/oauth2/token',
+      'https://api.twitter.com/2/oauth2/token',
       qs.stringify({
         grant_type: 'authorization_code',
         code: code,
