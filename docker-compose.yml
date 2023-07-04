@@ -1,0 +1,28 @@
+version: "3.5"
+services:
+    api:
+        build: .
+        container_name: elasnocongresso-oauth2
+        restart: unless-stopped
+        environment:
+            API_PORT: ${API_PORT}
+            SELF_URI: ${SELF_URI}
+            CODE_CHALLENGE_STR: ${SELF_URI}
+            TWITTER_CLIENT_ID: ${TWITTER_CLIENT_ID}
+        ports:
+            - ${BIND_INTERFACE}:${BIND_INTERFACE_PORT}:${API_PORT}
+        volumes:
+            - ${HOST_MACHINE_DATA_DIR}:./data/
+        networks:
+            - external
+        logging:
+          driver: "json-file"
+          options:
+            max-file: '100'
+            max-size: 1m
+networks:
+    external:
+        driver: bridge
+
+volumes:
+    redis_data:
