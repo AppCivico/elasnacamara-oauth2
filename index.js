@@ -22,6 +22,7 @@ app.get('/callback', async (req, res) => {
       {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': `Basic ${Buffer.from(process.env.TWITTER_CLIENT_ID + ':' + process.env.TWITTER_CONSUMER_SECRET).toString('base64')}`
         },
       },
     );
